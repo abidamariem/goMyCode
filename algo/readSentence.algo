@@ -1,0 +1,32 @@
+ALGORITHM readSentence
+VAR
+    countSentenceLength, countNumberOfWord, countNumberOfVowels : INTEGER;
+    textSentence : STRING;
+    
+BEGIN
+    
+    Read (textSentence);
+
+    WHILE (textSentence[i]<>".") DO 
+
+        countSentenceLength := countSentenceLength + 1;
+
+        IF (textSentence[i] IN ("A","E","I","O","U","Y")) THEN 
+    
+            countNumberOfVowels := countNumberOfVowels +1 ;
+
+        END-IF
+
+        IF (textSentence[i]=" ") THEN 
+            countNumberOfWord = countNumberOfWord + 1;
+        END-IF
+
+    END WHILE
+
+    Write("La phrase contient"+countNumberOfWord+" mots et de longuer "+countSentenceLength
+    +" et contient "+countNumberOfVowels+" voyelles");
+
+    Write ("La phrase contient %1 mots et de longuer %2 et contient %3 voyelles",
+    countNumberOfWord,countSentenceLength,countNumberOfVowels);
+
+END
